@@ -354,8 +354,10 @@ class KickBanMixin(MixinMeta):
                 until=None,
                 channel=None,
             )
-            await ctx.send(_("Done. That felt good."))
+        embed=discord.Embed(title="Kicked!", description="User was kicked from the server!", color=0xFF5733)
+        await ctx.send(embed=embed)
 
+        
     @commands.command()
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
